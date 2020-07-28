@@ -9,6 +9,7 @@ import dagger.android.support.DaggerAppCompatActivity;
 
 public class MainActivity extends DaggerAppCompatActivity {
 
+    @ApplicationScope
     @Inject
     Remote remote;
 

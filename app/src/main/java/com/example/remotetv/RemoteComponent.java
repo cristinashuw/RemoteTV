@@ -7,13 +7,13 @@ import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 
+@ApplicationScope
 @Component(modules = {AndroidSupportInjectionModule.class, RemoteModule.class})
 public interface RemoteComponent extends AndroidInjector<RemoteApplication> {
     @Component.Builder
     interface Builder {
         @BindsInstance
         RemoteComponent.Builder application(Application application);
-
         RemoteComponent build();
     }
 }
