@@ -2,6 +2,8 @@ package com.example.remotetv;
 
 import android.util.Log;
 
+import javax.inject.Inject;
+
 import static android.content.ContentValues.TAG;
 
 public class RemoteSamsung implements Remote {
@@ -18,7 +20,13 @@ public class RemoteSamsung implements Remote {
     }
 
     @Override
-    public void volemeDown() {
+    public void volumeDown() {
         Log.d(TAG, "Volume Down");
+    }
+
+
+    @Inject
+    public RemoteSamsung() {
+
     }
 }
