@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.RadioButton;
 import android.widget.SeekBar;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import javax.inject.Inject;
@@ -34,7 +34,7 @@ public class MainActivity extends DaggerAppCompatActivity {
 //        seekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
 //        seekBar.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
 
-        RadioButton powerButton = findViewById(R.id.PowerRadioButton);
+        Switch powerButton = findViewById(R.id.PowerButton);
         Button volumeUpButton = findViewById(R.id.VolUpButton);
         Button volumeDownButton = findViewById(R.id.VolDownButton);
 

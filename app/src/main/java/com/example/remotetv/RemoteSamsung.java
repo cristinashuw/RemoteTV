@@ -4,7 +4,6 @@ import android.util.Log;
 
 import javax.inject.Inject;
 
-import static android.content.ContentValues.TAG;
 
 public class RemoteSamsung implements Remote {
     public static final String TAG = RemoteSamsung.class.getSimpleName();
