@@ -7,10 +7,11 @@ import javax.inject.Inject;
 import static android.content.ContentValues.TAG;
 
 public class RemoteSamsung implements Remote {
+    public static final String TAG = RemoteSamsung.class.getSimpleName();
 
     @Override
     public void power(boolean isOn) {
-        Log.d(TAG, "power: ");
+        Log.d(TAG, "power: " + isOn);
     }
 
     @Override

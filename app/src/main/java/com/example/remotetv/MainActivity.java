@@ -1,13 +1,16 @@
 package com.example.remotetv;
 
-import android.content.Context;
 import android.media.AudioManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.Toast;
+
 import javax.inject.Inject;
+
 import dagger.android.support.DaggerAppCompatActivity;
 
 public class MainActivity extends DaggerAppCompatActivity {
@@ -24,12 +27,38 @@ public class MainActivity extends DaggerAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.e("REMOTE LOCATION", remote.toString());
+//        Log.e("REMOTE LOCATION", remote.toString());
+//
+//        seekBar = findViewById(R.id.seekBar);
+//        audioManager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
+//        seekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
+//        seekBar.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
 
-        seekBar = findViewById(R.id.seekBar);
-        audioManager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
-        seekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
-        seekBar.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+        RadioButton powerButton = findViewById(R.id.PowerRadioButton);
+        Button volumeUpButton = findViewById(R.id.VolUpButton);
+        Button volumeDownButton = findViewById(R.id.VolDownButton);
+
+        powerButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                remote.power(b);
+            }
+        });
+
+        volumeUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                remote.volumeUp();
+            }
+        });
+
+
+        volumeDownButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                remote.volumeDown();
+            }
+        });
 
     }
 
